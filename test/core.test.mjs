@@ -107,3 +107,10 @@ test('OFX writer escapes markup and limits NAME to 32 chars', () => {
   assert.match(txt, /<MEMO>A &amp; B &lt;Store&gt; with a very long merchant name here<\/MEMO>/);
   assert.match(txt, /<DTSERVER>20260102000000<\/DTSERVER>/);
 });
+
+test('mapping: German bank headers (Buchungstag/Verwendungszweck/Betrag) are recognized', async () => {
+  const { findHeaderRow, guessMapping } = await import('../docs/js/core/mapping.js');
+  const rows = [['Buchungstag', 'Verwendungszweck', 'Betrag (EUR)'], ['01.04.2026', 'Bäckerei Süß', '-4,80'], ['02.04.2026', 'Gehalt', '3.210,55']];
+  assert.equal(findHeaderRow(rows), 0);
+  assert.deepEqual(guessMapping(rows[0], rows.slice(1), 'en'), { date: 0, description: 1, amount: 2 });
+});

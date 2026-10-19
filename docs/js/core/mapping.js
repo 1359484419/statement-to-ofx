@@ -11,8 +11,8 @@ const norm = (s) => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '')
 
 // Keyword lists per role. Earlier entries are stronger matches.
 const KEYWORDS = {
-  date: ['date', 'transaction date', 'trans date', 'booking date', 'posting date', 'data', 'data lancamento', 'data do lancamento', 'data movimento', 'fecha', 'date de valeur', 'datum', 'journaldate', 'posted date', 'value date'],
-  description: ['description', 'transaction description', 'desc', 'details', 'narrative', 'payee', 'partner name', 'historico', 'descricao', 'lancamento', 'concepto', 'description 1', 'name', 'merchant', 'memo'],
+  date: ['date', 'transaction date', 'trans date', 'booking date', 'posting date', 'data', 'data lancamento', 'data do lancamento', 'data movimento', 'fecha', 'date de valeur', 'datum', 'journaldate', 'posted date', 'value date', 'buchungstag', 'buchungsdatum', 'wertstellung', 'valutadatum'],
+  description: ['description', 'transaction description', 'desc', 'details', 'narrative', 'payee', 'partner name', 'historico', 'descricao', 'lancamento', 'concepto', 'description 1', 'name', 'merchant', 'memo', 'verwendungszweck', 'buchungstext', 'empfanger', 'auftraggeber'],
   memo: ['original description', 'memo', 'notes', 'additional description', 'payment reference', 'description 2', 'description1', 'complemento', 'observacao'],
   amount: ['amount', 'transaction amount', 'valor', 'valor (r$)', 'amount (eur)', 'amount (usd)', 'importe', 'montant', 'betrag', 'netamount', 'net amount', 'value'],
   debit: ['debit', 'debits', 'withdrawal', 'withdrawals', 'debit amount', 'debito', 'debitos', 'saida', 'saidas', 'money out', 'paid out', 'charges', 'charge'],
