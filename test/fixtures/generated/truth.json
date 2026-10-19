@@ -1,0 +1,756 @@
+[
+ {
+  "file": "en-checking-2page.pdf",
+  "opening": 125000,
+  "closing": 690027,
+  "txns": [
+   {
+    "date": "2025-12-03",
+    "description": "CORNER COFFEE HOUSE",
+    "amount": -55396,
+    "balance": 69604
+   },
+   {
+    "date": "2025-12-05",
+    "description": "HARDWARE DEPOT PURCHASE CARD 8812 REF 144155",
+    "amount": -31766,
+    "balance": 37838
+   },
+   {
+    "date": "2025-12-06",
+    "description": "CITY WATER UTILITY AUTOPAY",
+    "amount": -60321,
+    "balance": -22483
+   },
+   {
+    "date": "2025-12-08",
+    "description": "ATM WITHDRAWAL 4410 ELM ST CARD 8812 REF 909511",
+    "amount": -15879,
+    "balance": -38362
+   },
+   {
+    "date": "2025-12-10",
+    "description": "RENT PAYMENT - PARKVIEW APTS CARD 8812 REF 857419",
+    "amount": -27572,
+    "balance": -65934
+   },
+   {
+    "date": "2025-12-11",
+    "description": "CHECK 1043",
+    "amount": -58290,
+    "balance": -124224
+   },
+   {
+    "date": "2025-12-12",
+    "description": "ATM WITHDRAWAL 4410 ELM ST CARD 8812 REF 342139",
+    "amount": -39473,
+    "balance": -163697
+   },
+   {
+    "date": "2025-12-14",
+    "description": "CHECK 1043",
+    "amount": -16782,
+    "balance": -180479
+   },
+   {
+    "date": "2025-12-15",
+    "description": "CORNER COFFEE HOUSE",
+    "amount": -33808,
+    "balance": -214287
+   },
+   {
+    "date": "2025-12-17",
+    "description": "RENT PAYMENT - PARKVIEW APTS CARD 8812 REF 852339",
+    "amount": -49266,
+    "balance": -263553
+   },
+   {
+    "date": "2025-12-18",
+    "description": "INTEREST PAYMENT",
+    "amount": 35368,
+    "balance": -228185
+   },
+   {
+    "date": "2025-12-19",
+    "description": "PAYROLL DEPOSIT ACME TOOLING INC CARD 8812 REF 238684",
+    "amount": 122679,
+    "balance": -105506
+   },
+   {
+    "date": "2025-12-21",
+    "description": "CITY WATER UTILITY AUTOPAY",
+    "amount": -20028,
+    "balance": -125534
+   },
+   {
+    "date": "2025-12-23",
+    "description": "CORNER COFFEE HOUSE",
+    "amount": -48914,
+    "balance": -174448
+   },
+   {
+    "date": "2025-12-25",
+    "description": "PAYROLL DEPOSIT ACME TOOLING INC CARD 8812 REF 910065",
+    "amount": 67855,
+    "balance": -106593
+   },
+   {
+    "date": "2025-12-27",
+    "description": "CITY WATER UTILITY AUTOPAY CARD 8812 REF 479841",
+    "amount": -49349,
+    "balance": -155942
+   },
+   {
+    "date": "2025-12-28",
+    "description": "PAYROLL DEPOSIT ACME TOOLING INC",
+    "amount": 37236,
+    "balance": -118706
+   },
+   {
+    "date": "2025-12-30",
+    "description": "INTEREST PAYMENT",
+    "amount": 106457,
+    "balance": -12249
+   },
+   {
+    "date": "2025-12-31",
+    "description": "HARDWARE DEPOT PURCHASE CARD 8812 REF 781377",
+    "amount": -25438,
+    "balance": -37687
+   },
+   {
+    "date": "2026-01-03",
+    "description": "GROCERY OUTLET #1182",
+    "amount": -41426,
+    "balance": -79113
+   },
+   {
+    "date": "2026-01-05",
+    "description": "HARDWARE DEPOT PURCHASE",
+    "amount": -29676,
+    "balance": -108789
+   },
+   {
+    "date": "2026-01-06",
+    "description": "PAYROLL DEPOSIT ACME TOOLING INC",
+    "amount": 82824,
+    "balance": -25965
+   },
+   {
+    "date": "2026-01-07",
+    "description": "INTEREST PAYMENT",
+    "amount": 206483,
+    "balance": 180518
+   },
+   {
+    "date": "2026-01-08",
+    "description": "INTEREST PAYMENT",
+    "amount": 146728,
+    "balance": 327246
+   },
+   {
+    "date": "2026-01-09",
+    "description": "PAYROLL DEPOSIT ACME TOOLING INC",
+    "amount": 208332,
+    "balance": 535578
+   },
+   {
+    "date": "2026-01-10",
+    "description": "CHECK 1043",
+    "amount": -39111,
+    "balance": 496467
+   },
+   {
+    "date": "2026-01-11",
+    "description": "GROCERY OUTLET #1182 CARD 8812 REF 913978",
+    "amount": -27926,
+    "balance": 468541
+   },
+   {
+    "date": "2026-01-12",
+    "description": "CHECK 1043 CARD 8812 REF 181745",
+    "amount": -30980,
+    "balance": 437561
+   },
+   {
+    "date": "2026-01-14",
+    "description": "ONLINE TRANSFER FROM SAVINGS REF 99812 CARD 8812 REF 953783",
+    "amount": 238140,
+    "balance": 675701
+   },
+   {
+    "date": "2026-01-16",
+    "description": "HARDWARE DEPOT PURCHASE",
+    "amount": -37767,
+    "balance": 637934
+   },
+   {
+    "date": "2026-01-17",
+    "description": "CORNER COFFEE HOUSE CARD 8812 REF 184098",
+    "amount": -14405,
+    "balance": 623529
+   },
+   {
+    "date": "2026-01-18",
+    "description": "INTEREST PAYMENT CARD 8812 REF 731820",
+    "amount": 159100,
+    "balance": 782629
+   },
+   {
+    "date": "2026-01-19",
+    "description": "CHECK 1043 CARD 8812 REF 157733",
+    "amount": -53607,
+    "balance": 729022
+   },
+   {
+    "date": "2026-01-21",
+    "description": "CHECK 1043 CARD 8812 REF 787434",
+    "amount": -38995,
+    "balance": 690027
+   }
+  ]
+ },
+ {
+  "file": "pt-extrato-saldo.pdf",
+  "opening": 352050,
+  "closing": 1347861,
+  "txns": [
+   {
+    "date": "2026-09-01",
+    "description": "PAGTO BOLETO ENERGIA",
+    "amount": -4820,
+    "balance": null
+   },
+   {
+    "date": "2026-09-01",
+    "description": "PAGTO BOLETO ENERGIA",
+    "amount": -55158,
+    "balance": null
+   },
+   {
+    "date": "2026-09-01",
+    "description": "PIX ENVIADO JOÃO PEREIRA",
+    "amount": -32424,
+    "balance": 259648
+   },
+   {
+    "date": "2026-09-02",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 246427,
+    "balance": null
+   },
+   {
+    "date": "2026-09-02",
+    "description": "RENDIMENTO APLICAÇÃO",
+    "amount": 22522,
+    "balance": 528597
+   },
+   {
+    "date": "2026-09-03",
+    "description": "COMPRA CARTAO DEB MERCADO BOM PRECO",
+    "amount": -46493,
+    "balance": null
+   },
+   {
+    "date": "2026-09-03",
+    "description": "COMPRA CARTAO DEB MERCADO BOM PRECO",
+    "amount": -84120,
+    "balance": null
+   },
+   {
+    "date": "2026-09-03",
+    "description": "TARIFA PACOTE SERVICOS",
+    "amount": -50255,
+    "balance": 347729
+   },
+   {
+    "date": "2026-09-05",
+    "description": "RENDIMENTO APLICAÇÃO",
+    "amount": 118687,
+    "balance": null
+   },
+   {
+    "date": "2026-09-05",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 268150,
+    "balance": null
+   },
+   {
+    "date": "2026-09-05",
+    "description": "TARIFA PACOTE SERVICOS",
+    "amount": -108662,
+    "balance": 625904
+   },
+   {
+    "date": "2026-09-08",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 119246,
+    "balance": null
+   },
+   {
+    "date": "2026-09-08",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 142883,
+    "balance": null
+   },
+   {
+    "date": "2026-09-08",
+    "description": "TARIFA PACOTE SERVICOS",
+    "amount": -102175,
+    "balance": 785858
+   },
+   {
+    "date": "2026-09-10",
+    "description": "PIX ENVIADO JOÃO PEREIRA",
+    "amount": -68818,
+    "balance": 717040
+   },
+   {
+    "date": "2026-09-11",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 56718,
+    "balance": 773758
+   },
+   {
+    "date": "2026-09-12",
+    "description": "TARIFA PACOTE SERVICOS",
+    "amount": -16624,
+    "balance": 757134
+   },
+   {
+    "date": "2026-09-13",
+    "description": "PIX ENVIADO JOÃO PEREIRA",
+    "amount": -90687,
+    "balance": 666447
+   },
+   {
+    "date": "2026-09-15",
+    "description": "COMPRA CARTAO DEB MERCADO BOM PRECO",
+    "amount": -76127,
+    "balance": null
+   },
+   {
+    "date": "2026-09-15",
+    "description": "TARIFA PACOTE SERVICOS",
+    "amount": -50107,
+    "balance": null
+   },
+   {
+    "date": "2026-09-15",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 12051,
+    "balance": 552264
+   },
+   {
+    "date": "2026-09-17",
+    "description": "PIX ENVIADO JOÃO PEREIRA",
+    "amount": -83638,
+    "balance": 468626
+   },
+   {
+    "date": "2026-09-18",
+    "description": "COMPRA CARTAO DEB MERCADO BOM PRECO",
+    "amount": -87601,
+    "balance": 381025
+   },
+   {
+    "date": "2026-09-20",
+    "description": "TED RECEBIDA CLIENTE LTDA",
+    "amount": 264726,
+    "balance": null
+   },
+   {
+    "date": "2026-09-20",
+    "description": "TARIFA PACOTE SERVICOS",
+    "amount": -13363,
+    "balance": null
+   },
+   {
+    "date": "2026-09-20",
+    "description": "TED RECEBIDA CLIENTE LTDA",
+    "amount": 223751,
+    "balance": 856139
+   },
+   {
+    "date": "2026-09-22",
+    "description": "RENDIMENTO APLICAÇÃO",
+    "amount": 21201,
+    "balance": null
+   },
+   {
+    "date": "2026-09-22",
+    "description": "TED RECEBIDA CLIENTE LTDA",
+    "amount": 91309,
+    "balance": null
+   },
+   {
+    "date": "2026-09-22",
+    "description": "PAGTO BOLETO ENERGIA",
+    "amount": -75642,
+    "balance": 893007
+   },
+   {
+    "date": "2026-09-23",
+    "description": "COMPRA CARTAO DEB MERCADO BOM PRECO",
+    "amount": -29638,
+    "balance": null
+   },
+   {
+    "date": "2026-09-23",
+    "description": "TED RECEBIDA CLIENTE LTDA",
+    "amount": 32958,
+    "balance": 896327
+   },
+   {
+    "date": "2026-09-26",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 259203,
+    "balance": null
+   },
+   {
+    "date": "2026-09-26",
+    "description": "PIX ENVIADO JOÃO PEREIRA",
+    "amount": -80123,
+    "balance": null
+   },
+   {
+    "date": "2026-09-26",
+    "description": "PIX RECEBIDO - MARIA SOUZA",
+    "amount": 272454,
+    "balance": 1347861
+   }
+  ]
+ },
+ {
+  "file": "pt-extrato-dc.pdf",
+  "opening": 100000,
+  "closing": 61594,
+  "txns": [
+   {
+    "date": "2026-10-02",
+    "dm": "02/10",
+    "description": "DEPOSITO EM DINHEIRO",
+    "amount": 61503,
+    "balance": null
+   },
+   {
+    "date": "2026-10-05",
+    "dm": "05/10",
+    "description": "COMPRA ELO POSTO CENTRAL",
+    "amount": -76156,
+    "balance": null
+   },
+   {
+    "date": "2026-10-08",
+    "dm": "08/10",
+    "description": "SAQUE 24H",
+    "amount": -59579,
+    "balance": null
+   },
+   {
+    "date": "2026-10-12",
+    "dm": "12/10",
+    "description": "SAQUE 24H",
+    "amount": -15920,
+    "balance": null
+   },
+   {
+    "date": "2026-10-15",
+    "dm": "15/10",
+    "description": "SAQUE 24H",
+    "amount": -85495,
+    "balance": null
+   },
+   {
+    "date": "2026-10-17",
+    "dm": "17/10",
+    "description": "TRANSF RECEBIDA",
+    "amount": 49931,
+    "balance": null
+   },
+   {
+    "date": "2026-10-21",
+    "dm": "21/10",
+    "description": "PAGAMENTO CONVENIO AGUA",
+    "amount": -20146,
+    "balance": null
+   },
+   {
+    "date": "2026-10-23",
+    "dm": "23/10",
+    "description": "TRANSF RECEBIDA",
+    "amount": 54638,
+    "balance": null
+   },
+   {
+    "date": "2026-10-26",
+    "dm": "26/10",
+    "description": "TRANSF RECEBIDA",
+    "amount": 67292,
+    "balance": null
+   },
+   {
+    "date": "2026-10-30",
+    "dm": "30/10",
+    "description": "COMPRA ELO POSTO CENTRAL",
+    "amount": -14474,
+    "balance": null
+   }
+  ]
+ },
+ {
+  "file": "en-unsigned-balance.pdf",
+  "opening": 50000,
+  "closing": -16554,
+  "txns": [
+   {
+    "date": "2026-03-01",
+    "description": "Salary",
+    "amount": 39624,
+    "balance": 89624
+   },
+   {
+    "date": "2026-03-03",
+    "description": "Card purchase - Pharmacy",
+    "amount": -16128,
+    "balance": 73496
+   },
+   {
+    "date": "2026-03-05",
+    "description": "Salary",
+    "amount": 12337,
+    "balance": 85833
+   },
+   {
+    "date": "2026-03-08",
+    "description": "Card purchase - Pharmacy",
+    "amount": -13338,
+    "balance": 72495
+   },
+   {
+    "date": "2026-03-10",
+    "description": "Card purchase - Bookshop",
+    "amount": -16866,
+    "balance": 55629
+   },
+   {
+    "date": "2026-03-12",
+    "description": "Salary",
+    "amount": 16646,
+    "balance": 72275
+   },
+   {
+    "date": "2026-03-14",
+    "description": "Refund - Online store",
+    "amount": 30910,
+    "balance": 103185
+   },
+   {
+    "date": "2026-03-17",
+    "description": "Salary",
+    "amount": 12245,
+    "balance": 115430
+   },
+   {
+    "date": "2026-03-19",
+    "description": "Card purchase - Bookshop",
+    "amount": -34095,
+    "balance": 81335
+   },
+   {
+    "date": "2026-03-21",
+    "description": "Card purchase - Bookshop",
+    "amount": -38988,
+    "balance": 42347
+   },
+   {
+    "date": "2026-03-23",
+    "description": "Card purchase - Bookshop",
+    "amount": -34902,
+    "balance": 7445
+   },
+   {
+    "date": "2026-03-26",
+    "description": "Card purchase - Bookshop",
+    "amount": -23999,
+    "balance": -16554
+   }
+  ]
+ },
+ {
+  "file": "pt-extrato.xlsx",
+  "opening": 200000,
+  "closing": 173070,
+  "txns": [
+   {
+    "date": "2026-07-01",
+    "description": "Lançamento 1",
+    "amount": -1731,
+    "balance": 198269
+   },
+   {
+    "date": "2026-07-03",
+    "description": "Lançamento 2",
+    "amount": -2462,
+    "balance": 195807
+   },
+   {
+    "date": "2026-07-05",
+    "description": "Lançamento 3",
+    "amount": 3193,
+    "balance": 199000
+   },
+   {
+    "date": "2026-07-07",
+    "description": "Lançamento 4",
+    "amount": -3924,
+    "balance": 195076
+   },
+   {
+    "date": "2026-07-09",
+    "description": "Lançamento 5",
+    "amount": -4655,
+    "balance": 190421
+   },
+   {
+    "date": "2026-07-11",
+    "description": "Lançamento 6",
+    "amount": 5386,
+    "balance": 195807
+   },
+   {
+    "date": "2026-07-13",
+    "description": "Lançamento 7",
+    "amount": -6117,
+    "balance": 189690
+   },
+   {
+    "date": "2026-07-15",
+    "description": "Lançamento 8",
+    "amount": -6848,
+    "balance": 182842
+   },
+   {
+    "date": "2026-07-17",
+    "description": "Lançamento 9",
+    "amount": 7579,
+    "balance": 190421
+   },
+   {
+    "date": "2026-07-19",
+    "description": "Lançamento 10",
+    "amount": -8310,
+    "balance": 182111
+   },
+   {
+    "date": "2026-07-21",
+    "description": "Lançamento 11",
+    "amount": -9041,
+    "balance": 173070
+   },
+   {
+    "date": "2026-07-23",
+    "description": "Lançamento 12",
+    "amount": 9772,
+    "balance": 182842
+   },
+   {
+    "date": "2026-07-25",
+    "description": "Lançamento 13",
+    "amount": -10503,
+    "balance": 172339
+   },
+   {
+    "date": "2026-07-27",
+    "description": "Lançamento 14",
+    "amount": -11234,
+    "balance": 161105
+   },
+   {
+    "date": "2026-07-29",
+    "description": "Lançamento 15",
+    "amount": 11965,
+    "balance": 173070
+   }
+  ]
+ },
+ {
+  "file": "br-extrato.csv",
+  "opening": 1000000,
+  "closing": 629650,
+  "txns": [
+   {
+    "date": "2026-05-01",
+    "description": "PIX 1 PADARIA SÃO JOSÉ",
+    "amount": -12345,
+    "balance": 987655
+   },
+   {
+    "date": "2026-05-02",
+    "description": "PIX 2 PADARIA SÃO JOSÉ",
+    "amount": -24690,
+    "balance": 962965
+   },
+   {
+    "date": "2026-05-03",
+    "description": "PIX 3 PADARIA SÃO JOSÉ",
+    "amount": -37035,
+    "balance": 925930
+   },
+   {
+    "date": "2026-05-04",
+    "description": "PIX 4 PADARIA SÃO JOSÉ",
+    "amount": 49380,
+    "balance": 975310
+   },
+   {
+    "date": "2026-05-05",
+    "description": "PIX 5 PADARIA SÃO JOSÉ",
+    "amount": -61725,
+    "balance": 913585
+   },
+   {
+    "date": "2026-05-06",
+    "description": "PIX 6 PADARIA SÃO JOSÉ",
+    "amount": -74070,
+    "balance": 839515
+   },
+   {
+    "date": "2026-05-07",
+    "description": "PIX 7 PADARIA SÃO JOSÉ",
+    "amount": -86415,
+    "balance": 753100
+   },
+   {
+    "date": "2026-05-08",
+    "description": "PIX 8 PADARIA SÃO JOSÉ",
+    "amount": 98760,
+    "balance": 851860
+   },
+   {
+    "date": "2026-05-09",
+    "description": "PIX 9 PADARIA SÃO JOSÉ",
+    "amount": -111105,
+    "balance": 740755
+   },
+   {
+    "date": "2026-05-10",
+    "description": "PIX 10 PADARIA SÃO JOSÉ",
+    "amount": -123450,
+    "balance": 617305
+   },
+   {
+    "date": "2026-05-11",
+    "description": "PIX 11 PADARIA SÃO JOSÉ",
+    "amount": -135795,
+    "balance": 481510
+   },
+   {
+    "date": "2026-05-12",
+    "description": "PIX 12 PADARIA SÃO JOSÉ",
+    "amount": 148140,
+    "balance": 629650
+   }
+  ]
+ }
+]

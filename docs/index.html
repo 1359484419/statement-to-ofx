@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" data-root="./">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Bank Statement to OFX, QFX, QBO &amp; Xero CSV (No Upload)</title>
+<meta name="description" content="Convert bank statement CSV, Excel or text PDF files to OFX, QFX, QBO or Xero CSV in your browser. Files are never uploaded; balances are checked before export.">
+<link rel="canonical" href="https://1359484419.github.io/statement-to-ofx/">
+<link rel="alternate" hreflang="en" href="https://1359484419.github.io/statement-to-ofx/">
+<link rel="alternate" hreflang="pt-BR" href="https://1359484419.github.io/statement-to-ofx/pt/">
+<link rel="alternate" hreflang="x-default" href="https://1359484419.github.io/statement-to-ofx/">
+<meta property="og:title" content="Bank statement to OFX / QFX / QBO / Xero CSV, in your browser">
+<meta property="og:description" content="Private statement converter: CSV, XLSX and text PDF in, OFX/QFX/QBO/Xero CSV out. No upload.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<script type="module" src="js/app.js"></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./">Statement<span>Bridge</span></a>
+  <nav class="top" aria-label="Main">
+    <a href="guides/ofx-qfx-qbo.html">OFX vs QFX vs QBO</a>
+    <a href="guides/xero-csv.html">Xero CSV</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="pt/" hreflang="pt-BR" lang="pt-BR">Português</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Bank statement to OFX, QFX, QBO or Xero CSV — without uploading it</h1>
+    <p class="lead">Drop a CSV, Excel file or text-based PDF statement. Map the columns, check that the running balance adds up, fix any row, and download a file your accounting or budgeting app can import.</p>
+    <div class="badges">
+      <span class="badge">Runs in this browser tab</span>
+      <span class="badge">No account, no upload</span>
+      <span class="badge">Balance checks before export</span>
+      <span class="badge">Free</span>
+    </div>
+  </section>
+
+  <div id="tool"><noscript><p class="error">This converter needs JavaScript. It runs locally in your browser.</p></noscript></div>
+
+  <section class="card pro" aria-labelledby="pro-h">
+    <h2 id="pro-h">Pro <small>coming soon</small></h2>
+    <p class="muted">We are planning a paid tier for bookkeepers: batch conversion of many statements at once, saved column templates per client, and splitting large files for import limits. Everything on this page will stay free. There is nothing to buy yet.</p>
+  </section>
+
+  <section class="prose">
+    <h2>What it handles today</h2>
+    <ul>
+      <li><strong>CSV, TSV and TXT exports from any bank.</strong> The column wizard detects the header row, the delimiter (comma, semicolon, tab), date order and decimal separator, including formats like <code>1.234,56</code> and <code>11'373.94</code>. It understands a single signed amount column, separate debit/credit columns, or an amount plus a D/C flag column.</li>
+      <li><strong>Excel and LibreOffice files</strong> (XLSX, XLS, ODS), with real date and number cells.</li>
+      <li><strong>Text-based PDF statements.</strong> The PDF reader finds rows that start with a date and end with amounts, reads column headers such as Withdrawals / Deposits / Balance, joins descriptions that wrap onto a second line, and picks up the opening and closing balance. It is a general heuristic, not a set of per-bank templates, so always look at the review table before exporting. Scanned PDFs (pictures of paper) have no text and are not supported yet.</li>
+    </ul>
+    <h2>Checks before you export</h2>
+    <p>Most import problems come from a wrong sign or a missed row. Before the download buttons unlock, the review step checks:</p>
+    <ul>
+      <li>that every running balance equals the previous balance plus the transaction (statements in newest-first order are handled);</li>
+      <li>that opening balance + all transactions = closing balance, using the balances printed on the statement when they are there;</li>
+      <li>bad or missing dates, zero amounts, and rows that look like duplicates.</li>
+    </ul>
+    <p>Rows that fail are highlighted, and you can edit any date, description, amount or balance in place.</p>
+    <h2>Output formats</h2>
+    <ul>
+      <li><strong>OFX 2.2</strong> (XML) and <strong>OFX 1.0.2</strong> (SGML) for apps that import Open Financial Exchange files, such as GnuCash, Moneydance and many budgeting tools.</li>
+      <li><strong>QFX</strong>, a Web Connect file for use with Quicken, and <strong>QBO</strong>, a Web Connect file for QuickBooks Desktop. Both are marked experimental: these programs check the financial institution ID (INTU.BID) inside the file, and we cannot test every version. <a href="guides/ofx-qfx-qbo.html">How the formats differ</a>.</li>
+      <li><strong>Xero CSV</strong> in the bank statement import layout. <a href="guides/xero-csv.html">Tips for importing it</a>.</li>
+    </ul>
+    <p>Each transaction gets a stable ID (FITID) built from its date, amount and description, so exporting the same statement twice does not create duplicates when your app de-duplicates by ID.</p>
+
+    <h2>Questions</h2>
+    <dl class="faq">
+      <dt>Is my statement uploaded anywhere?</dt>
+      <dd>No. The page reads the file with your browser's File API and builds the output in memory. The site sends a Content-Security-Policy that only allows network requests back to this site, and there is no analytics or tracking script. <a href="privacy.html">How to verify this yourself</a>.</dd>
+      <dt>Which banks are supported?</dt>
+      <dd>Any bank whose export has dates and amounts in columns. A few layouts are recognized automatically (for example the CSV layouts used by Capital One cards, Schwab checking, Payoneer, N26 and UBS, as seen in public sample files). We do not claim support for any specific bank's PDF layout; the PDF reader is generic, and the balance checks are there to catch what it gets wrong.</dd>
+      <dt>My card statement shows purchases as positive numbers.</dt>
+      <dd>Tick “Flip all signs”. OFX files expect purchases on a credit card to be negative.</dd>
+      <dt>Quicken or QuickBooks says the bank is not supported.</dt>
+      <dd>Those programs only accept Web Connect files that name a financial institution ID they know. Change the INTU.BID field to your bank's ID, or import the plain OFX file where your program allows it.</dd>
+      <dt>Does it work offline?</dt>
+      <dd>Once the page has loaded, conversion needs no connection. You can also run it from a local copy; see the project README.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <nav aria-label="Footer">
+    <a href="./">Converter</a>
+    <a href="guides/ofx-qfx-qbo.html">OFX, QFX and QBO explained</a>
+    <a href="guides/xero-csv.html">Xero CSV import</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="pt/" hreflang="pt-BR" lang="pt-BR">Extrato para OFX (Português)</a>
+  </nav>
+  <p>Statement Bridge is an independent tool. Quicken is a trademark of Quicken Inc.; QuickBooks is a trademark of Intuit Inc.; Xero is a trademark of Xero Limited. They are mentioned only to describe file compatibility; this project is not affiliated with or endorsed by them. Always compare imported totals with your bank statement. MIT licensed.</p>
+</div></footer>
+</body>
+</html>

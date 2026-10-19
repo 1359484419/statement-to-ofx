@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>Privacy: Your Statement Never Leaves Your Browser | Statement Bridge</title>
+<meta name="description" content="How Statement Bridge converts bank statements without uploading them, what the page stores, and how to verify it yourself with your browser's developer tools.">
+<link rel="canonical" href="https://1359484419.github.io/statement-to-ofx/privacy.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./">Statement<span>Bridge</span></a>
+  <nav class="top" aria-label="Main">
+    <a href="./">Converter</a>
+    <a href="pt/" hreflang="pt-BR" lang="pt-BR">Português</a>
+  </nav>
+</div></header>
+<main class="wrap prose">
+  <h1>Privacy</h1>
+  <p class="lead">Bank statements are some of the most sensitive files you have. This converter is built so that they never leave your device.</p>
+
+  <h2>What happens to your file</h2>
+  <ul>
+    <li>Your browser reads the file you choose. The CSV, spreadsheet or PDF is parsed by JavaScript running in this tab, using libraries served from this site (PDF.js for PDFs, SheetJS for spreadsheets).</li>
+    <li>The output file is built in memory and handed to your browser as a download.</li>
+    <li>Nothing is sent to a server. There is no server-side code at all: the site is static files.</li>
+    <li>When you close the tab, the statement is gone.</li>
+  </ul>
+
+  <h2>What the page stores</h2>
+  <p>Only your export preferences (account type, account number, bank ID, currency, INTU.BID and Xero date format) are kept in your browser's local storage so you do not have to type them again. Clear your site data to remove them. Transactions are never stored.</p>
+
+  <h2>No tracking</h2>
+  <p>No analytics, advertising, fonts or scripts are loaded from other domains. The pages send a Content-Security-Policy that limits scripts and network connections to this site, and the converter also blocks any attempt to contact another origin and records it in the activity log.</p>
+
+  <h2>Check it yourself</h2>
+  <ol>
+    <li>Open the converter and your browser's developer tools (F12, or Cmd+Option+I on a Mac).</li>
+    <li>Go to the <strong>Network</strong> tab and clear it.</li>
+    <li>Drop a statement and export a file.</li>
+    <li>You will see requests only for this site's own scripts (for example <code>pdf.worker.min.mjs</code> the first time you open a PDF) and no request carrying your file. You can also disconnect from the internet after the page loads; conversion keeps working.</li>
+  </ol>
+  <p>The source code is MIT licensed and can be run from a local folder.</p>
+
+  <h2>Hosting</h2>
+  <p>The site is served as static files by its hosting provider, which, like any web host, may keep standard access logs (IP address, page requested, time). Those logs never contain your statement.</p>
+</main>
+<footer class="site"><div class="wrap">
+  <p><a href="./">Back to the converter</a></p>
+</div></footer>
+</body>
+</html>

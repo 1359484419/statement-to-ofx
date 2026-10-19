@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /samples/
+
+Sitemap: https://1359484419.github.io/statement-to-ofx/sitemap.xml

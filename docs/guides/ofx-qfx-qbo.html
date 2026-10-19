@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>OFX vs QFX vs QBO: What Is Inside and Why Imports Fail</title>
+<meta name="description" content="OFX 1.x/2.x, QFX and QBO bank files explained: structure, FITID duplicates, INTU.BID, signs, dates and encodings, with fixes for common import errors.">
+<link rel="canonical" href="https://1359484419.github.io/statement-to-ofx/guides/ofx-qfx-qbo.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../">Statement<span>Bridge</span></a>
+  <nav class="top" aria-label="Main">
+    <a href="../">Converter</a>
+    <a href="xero-csv.html">Xero CSV</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+<main class="wrap prose">
+  <h1>OFX vs QFX vs QBO: what is inside each file, and why imports fail</h1>
+  <p class="muted">All three are the same thing underneath: an Open Financial Exchange (OFX) bank statement. The differences are in the header, one extra element, and what the importing program is willing to accept.</p>
+
+  <h2>The short version</h2>
+  <table>
+    <thead><tr><th>File</th><th>What it is</th><th>Typical use</th></tr></thead>
+    <tbody>
+      <tr><td><code>.ofx</code> (1.0.2)</td><td>SGML text with a plain <code>OFXHEADER:100</code> header. Leaf elements are not closed.</td><td>Most banks (including Brazilian banks), GnuCash, Moneydance, many accounting systems.</td></tr>
+      <tr><td><code>.ofx</code> (2.x)</td><td>Well-formed XML with an <code>&lt;?OFX OFXHEADER="200" ...?&gt;</code> processing instruction.</td><td>Newer apps; anything that prefers XML.</td></tr>
+      <tr><td><code>.qfx</code></td><td>OFX 1.0.2 plus an <code>&lt;INTU.BID&gt;</code> element identifying the bank.</td><td>Web Connect import for use with Quicken.</td></tr>
+      <tr><td><code>.qbo</code></td><td>Same structure as QFX, with the <code>.qbo</code> extension.</td><td>Web Connect import into QuickBooks Desktop.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>What a minimal statement looks like</h2>
+<pre>&lt;OFX&gt;
+ &lt;SIGNONMSGSRSV1&gt;&lt;SONRS&gt; ... &lt;INTU.BID&gt;3000 &lt;/SONRS&gt;&lt;/SIGNONMSGSRSV1&gt;
+ &lt;BANKMSGSRSV1&gt;&lt;STMTTRNRS&gt;&lt;STMTRS&gt;
+  &lt;CURDEF&gt;USD
+  &lt;BANKACCTFROM&gt;&lt;BANKID&gt;123456789&lt;ACCTID&gt;4321&lt;ACCTTYPE&gt;CHECKING&lt;/BANKACCTFROM&gt;
+  &lt;BANKTRANLIST&gt;
+   &lt;STMTTRN&gt;&lt;TRNTYPE&gt;DEBIT&lt;DTPOSTED&gt;20260105&lt;TRNAMT&gt;-42.10
+            &lt;FITID&gt;9f2c...&lt;NAME&gt;GROCERY OUTLET&lt;/STMTTRN&gt;
+  &lt;/BANKTRANLIST&gt;
+  &lt;LEDGERBAL&gt;&lt;BALAMT&gt;1250.00&lt;DTASOF&gt;20260131&lt;/LEDGERBAL&gt;
+ &lt;/STMTRS&gt;&lt;/STMTTRNRS&gt;&lt;/BANKMSGSRSV1&gt;
+&lt;/OFX&gt;</pre>
+  <p>Credit cards use <code>CREDITCARDMSGSRSV1</code> / <code>CCSTMTRS</code> / <code>CCACCTFROM</code> instead of the bank aggregates, and have no bank ID.</p>
+
+  <h2>Six reasons an import goes wrong</h2>
+  <h3>1. Every amount has the wrong sign</h3>
+  <p><code>TRNAMT</code> is from the account holder's point of view: money leaving the account is negative. Card statements usually print purchases as positive numbers, so a straight copy turns every purchase into a payment. In the converter, tick “Flip all signs” for those statements and check the balance line again.</p>
+  <h3>2. Transactions are duplicated, or silently skipped</h3>
+  <p>Importers de-duplicate by <code>FITID</code>. If a converter makes random IDs, importing the same month twice doubles it. If it uses only date and amount, two identical coffees on one day collapse into one. Statement Bridge hashes date, amount, description and the occurrence number of identical rows, so the IDs are stable across re-exports and still unique within a file.</p>
+  <h3>3. “This financial institution is not supported”</h3>
+  <p>Quicken and QuickBooks Desktop read <code>INTU.BID</code> to decide which bank the Web Connect file belongs to, and may refuse IDs they do not recognise or that are not enabled for Web Connect. The value is a number assigned to each institution. If your import is refused, try your own bank's ID (it appears in any QFX/QBO file your bank has given you), or import a plain OFX file where your program offers that. We mark QFX and QBO as experimental for this reason.</p>
+  <h3>4. Dates land in the wrong month</h3>
+  <p>OFX dates are <code>YYYYMMDD</code>, so the problem is always on the input side: <code>03/04/2026</code> is 4 March in the US and 3 April almost everywhere else. The column wizard guesses from values above 12, and lets you switch the order. PDF statements often print dates without a year; the converter takes the year from the statement period and rolls over at December to January.</p>
+  <h3>5. Accented names turn into junk</h3>
+  <p>OFX 1.0.2 declares its character set in the header (<code>CHARSET:1252</code> here), and the bytes must match. Writing UTF-8 bytes under a 1252 header is a common cause of “SÃ£O PAULO”. This converter encodes OFX 1.0.2, QFX and QBO in Windows-1252, and writes OFX 2.x as plain ASCII with XML character references, which the OFX readers we test against (ofxparse and ofxtools) load without errors.</p>
+  <h3>6. The ending balance does not match</h3>
+  <p><code>LEDGERBAL</code> should be the statement's closing balance. If rows are missing or a sign is wrong, the imported balance drifts. That is why the converter checks opening balance + transactions = closing balance before it lets you export.</p>
+
+  <h2>Which one should I pick?</h2>
+  <ul>
+    <li>Your program imports “OFX” or “Money/OFX” files: use OFX 1.0.2 first, OFX 2.2 if that is refused.</li>
+    <li>Quicken: QFX. If it is refused, check the INTU.BID value.</li>
+    <li>QuickBooks Desktop bank feeds: QBO.</li>
+    <li>Xero: either OFX or the <a href="xero-csv.html">Xero CSV layout</a>.</li>
+  </ul>
+  <p><a href="../">Open the converter</a></p>
+</main>
+<footer class="site"><div class="wrap">
+  <p>Quicken is a trademark of Quicken Inc.; QuickBooks and INTU are trademarks of Intuit Inc.; Xero is a trademark of Xero Limited. Statement Bridge is not affiliated with them. MIT licensed.</p>
+</div></footer>
+</body>
+</html>

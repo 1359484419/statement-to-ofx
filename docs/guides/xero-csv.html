@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>Importing a Bank Statement CSV into Xero: Columns, Dates and Signs</title>
+<meta name="description" content="How the Xero bank statement CSV is laid out, how to get dates, signs and payees right, and when to use OFX instead.">
+<link rel="canonical" href="https://1359484419.github.io/statement-to-ofx/guides/xero-csv.html">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="../">Statement<span>Bridge</span></a>
+  <nav class="top" aria-label="Main">
+    <a href="../">Converter</a>
+    <a href="ofx-qfx-qbo.html">OFX vs QFX vs QBO</a>
+    <a href="../privacy.html">Privacy</a>
+  </nav>
+</div></header>
+<main class="wrap prose">
+  <h1>Importing a bank statement CSV into Xero</h1>
+  <p class="muted">Xero can import statement lines from a CSV file when there is no bank feed, or to fill a gap in one. The file has to follow Xero's simple layout. Here is what each column means and where imports usually trip.</p>
+
+  <h2>The layout this converter writes</h2>
+  <table>
+    <thead><tr><th>Column</th><th>Content</th></tr></thead>
+    <tbody>
+      <tr><td><code>*Date</code></td><td>Transaction date, in the format you choose (see below).</td></tr>
+      <tr><td><code>*Amount</code></td><td>Signed number with a dot as decimal separator and no thousands separator: <code>-42.10</code> for money out, <code>1500.00</code> for money in.</td></tr>
+      <tr><td><code>Payee</code></td><td>The description from your statement. Xero's bank rules match on this, so keep it close to what the bank prints.</td></tr>
+      <tr><td><code>Description</code></td><td>Extra text (memo, original description) when the source has it.</td></tr>
+      <tr><td><code>Reference</code></td><td>Transaction or document number, if any.</td></tr>
+      <tr><td><code>Check Number</code></td><td>Cheque number, if any.</td></tr>
+    </tbody>
+  </table>
+  <p>The asterisks mark the columns that must have a value. The names follow the layout of Xero's statement import template. During import Xero asks you to confirm which column holds what, so if your version labels a column differently, map it there.</p>
+
+  <h2>Dates: match your organisation's region</h2>
+  <p>Xero reads ambiguous dates such as <code>03/04/2026</code> according to the organisation's regional settings. A US organisation reads it as 4 March; a UK, Australian or New Zealand one as 3 April. Pick <code>MM/DD/YYYY</code> or <code>DD/MM/YYYY</code> in the export step to match. After importing, check that the first and last statement lines show the dates you expect before reconciling.</p>
+
+  <h2>Signs</h2>
+  <p>Money leaving the account is negative. For a credit card account in Xero, a purchase is also negative and a payment to the card is positive. If your card statement prints purchases as positive, tick “Flip all signs” in the converter before exporting.</p>
+
+  <h2>Avoiding duplicates</h2>
+  <p>A CSV line has no unique ID, so overlapping imports are easy to create. Export one statement period at a time, and use the period shown in the review step to check that it does not overlap your last import.</p>
+
+  <h2>CSV or OFX?</h2>
+  <p>Xero also imports OFX files. OFX carries the account, the closing balance and a unique ID per line, which helps with duplicate detection. Use the CSV when you want to edit lines in a spreadsheet before importing, or when your bank's description text is better kept in separate Payee and Description columns.</p>
+
+  <h2>Doing it</h2>
+  <ol>
+    <li>Open the <a href="../">converter</a> and drop your bank's CSV, Excel or text PDF statement.</li>
+    <li>Check the columns and the balance checks, fix any highlighted rows.</li>
+    <li>Choose the date format that matches your Xero organisation and click <em>Xero bank statement CSV</em>.</li>
+    <li>In Xero, open the bank account, choose to import a statement, and select the file.</li>
+  </ol>
+</main>
+<footer class="site"><div class="wrap">
+  <p>Xero is a trademark of Xero Limited. Statement Bridge is an independent tool and is not affiliated with or endorsed by Xero. MIT licensed.</p>
+</div></footer>
+</body>
+</html>

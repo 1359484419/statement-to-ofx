@@ -1,0 +1,22 @@
+{
+  "name": "statement-to-ofx",
+  "version": "0.1.0",
+  "description": "Convert bank statements (CSV, XLSX, text PDF) to OFX, QFX, QBO and Xero CSV in the browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "sh scripts/test-all.sh",
+    "serve": "node scripts/serve.mjs 8080",
+    "fixtures": "node scripts/make-fixtures.mjs",
+    "fetch-samples": "sh scripts/fetch-external-samples.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.10.38",
+    "playwright-core": "^1.47.2",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}

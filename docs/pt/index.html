@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR" data-root="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Converter extrato em OFX: PDF, Excel e CSV, sem upload</title>
+<meta name="description" content="Converta extrato bancário em PDF com texto, Excel ou CSV para OFX no navegador. O arquivo não sai do seu computador e o saldo é conferido antes de exportar.">
+<link rel="canonical" href="https://1359484419.github.io/statement-to-ofx/pt/">
+<link rel="alternate" hreflang="en" href="https://1359484419.github.io/statement-to-ofx/">
+<link rel="alternate" hreflang="pt-BR" href="https://1359484419.github.io/statement-to-ofx/pt/">
+<link rel="alternate" hreflang="x-default" href="https://1359484419.github.io/statement-to-ofx/">
+<meta property="og:title" content="Extrato para OFX no navegador, sem enviar o arquivo">
+<meta property="og:description" content="PDF com texto, XLSX ou CSV para OFX, com conferência de saldo. Grátis.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css">
+<script type="module" src="../js/app.js"></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="./">Statement<span>Bridge</span></a>
+  <nav class="top" aria-label="Principal">
+    <a href="../privacy.html">Privacidade (EN)</a>
+    <a href="../" hreflang="en" lang="en">English</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Extrato bancário para OFX, sem enviar o arquivo para ninguém</h1>
+    <p class="lead">Arraste o extrato em PDF (com texto), Excel ou CSV. Confira as colunas, veja se o saldo fecha, corrija o que precisar e baixe um OFX para importar no seu sistema contábil ou financeiro para a conciliação bancária.</p>
+    <div class="badges">
+      <span class="badge">Roda nesta aba do navegador</span>
+      <span class="badge">Sem cadastro, sem upload</span>
+      <span class="badge">Conferência de saldo</span>
+      <span class="badge">Grátis</span>
+    </div>
+  </section>
+
+  <div id="tool"><noscript><p class="error">O conversor precisa de JavaScript. Ele roda localmente no seu navegador.</p></noscript></div>
+
+  <section class="card pro" aria-labelledby="pro-h">
+    <h2 id="pro-h">Pro <small>em breve</small></h2>
+    <p class="muted">Estamos preparando uma versão para escritórios contábeis: vários extratos de uma vez, modelos de colunas salvos por cliente e pagamento avulso, sem mensalidade. Tudo o que está nesta página continua grátis. Ainda não há nada à venda.</p>
+  </section>
+
+  <section class="prose">
+    <h2>O que funciona hoje</h2>
+    <ul>
+      <li><strong>CSV e TXT de qualquer banco.</strong> Detecta separador (vírgula, ponto e vírgula, tabulação), datas no formato dd/mm/aaaa e valores com vírgula decimal (<code>1.234,56</code>), inclusive com sinal no fim (<code>150,00-</code>) ou com indicador D/C (<code>150,00 D</code>).</li>
+      <li><strong>Planilhas Excel e LibreOffice</strong> (XLSX, XLS, ODS).</li>
+      <li><strong>Extrato em PDF com texto.</strong> O leitor procura linhas que começam com data e terminam com valor, reconhece cabeçalhos como Data, Histórico, Documento, Valor e Saldo, ignora linhas de “SALDO DO DIA” (usando o valor para conferir o saldo) e lê o “Saldo anterior” e o “Saldo final”. É uma leitura genérica, não um modelo por banco: confira sempre a tabela antes de exportar. PDF digitalizado (foto ou imagem do papel) ainda não é suportado.</li>
+    </ul>
+    <h2>Conferência antes de exportar</h2>
+    <ul>
+      <li>Cada saldo impresso precisa ser igual ao saldo anterior mais os lançamentos desde então.</li>
+      <li>Saldo anterior + soma dos lançamentos precisa ser igual ao saldo final.</li>
+      <li>Datas inválidas, valores zerados e possíveis lançamentos duplicados são destacados.</li>
+    </ul>
+    <p>Qualquer data, histórico, valor ou saldo pode ser corrigido direto na tabela.</p>
+    <h2>Qual OFX escolher</h2>
+    <p>Os bancos brasileiros normalmente geram <strong>OFX 1.0.2 (SGML)</strong>, e é esse que a maioria dos sistemas contábeis espera; por isso ele é o primeiro botão. O OFX 2.2 (XML) serve para programas mais novos. Os acentos são gravados em Windows-1252 no OFX 1.0.2, como fazem os bancos.</p>
+    <p>Cada lançamento recebe um identificador (FITID) estável, calculado a partir de data, valor e histórico. Exportar o mesmo extrato duas vezes gera os mesmos FITIDs, o que evita lançamentos duplicados na importação.</p>
+    <h2>Perguntas</h2>
+    <dl class="faq">
+      <dt>O extrato é enviado para algum servidor?</dt>
+      <dd>Não. O arquivo é lido pelo próprio navegador e o OFX é gerado na memória. A página bloqueia qualquer conexão para fora deste site e não tem scripts de estatística ou rastreamento.</dd>
+      <dt>Funciona com o PDF do meu banco?</dt>
+      <dd>Funciona com PDFs que têm texto selecionável e uma linha por lançamento com data e valor. Não afirmamos suporte a nenhum layout específico de banco; testamos com extratos de exemplo e a conferência de saldo existe para pegar o que a leitura errar. Se o seu extrato não fechar, corrija as linhas destacadas.</dd>
+      <dt>A fatura do cartão aparece com compras positivas.</dt>
+      <dd>Marque “Inverter todos os sinais”. No OFX, compras no cartão devem ser negativas.</dd>
+      <dt>O banco já exporta OFX pelo app.</dt>
+      <dd>Então use o arquivo do banco. Esta ferramenta é para quando só há PDF, planilha ou CSV — por exemplo, extratos antigos.</dd>
+    </dl>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap">
+  <nav aria-label="Rodapé">
+    <a href="./">Conversor</a>
+    <a href="../privacy.html">Privacidade</a>
+    <a href="../" hreflang="en" lang="en">English version</a>
+  </nav>
+  <p>Statement Bridge é uma ferramenta independente, sem vínculo com bancos ou fabricantes de software. Nomes de produtos citados são marcas de seus donos e aparecem só para descrever compatibilidade de arquivos. Confira sempre os totais importados com o extrato do banco. Licença MIT.</p>
+</div></footer>
+</body>
+</html>

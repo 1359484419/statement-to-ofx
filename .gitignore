@@ -1,0 +1,5 @@
+node_modules/
+test/out/
+test/out-e2e/
+test/external/
+.DS_Store
